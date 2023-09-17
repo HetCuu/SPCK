@@ -108,7 +108,7 @@ p {
 .account_list {
     font-size: 40px;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     text-align: center;
 }
 
@@ -117,5 +117,28 @@ p {
     padding-bottom: 3rem;
 }
 .box-shadown {
-    box-shadow: #5e4638 0 0 9px 4px;
+    box-shadow: #615f5d 0 0 9px 4px;
+}
+
+.width {
+    width: 23%
+}
+
+.gap {
+    gap: 2%;
+}
+
+.ft {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    background-color: rgba(105, 178, 154, 0.738);
+    margin-top: 50px;
+}
+
+.hover_a:hover {
+    color: blue;
+    text-decoration: underline;
 }
