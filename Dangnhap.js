@@ -1,26 +1,24 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const loginForm = document.getElementById("login-form");
+document.getElementById('btnSubmit').addEventListener('click', handleSignUp);
 
-    loginForm?.addEventListener("submit", function (event) {
-        // Ngăn hành động submit mặc định của form (reload hoặc chuyển trang tùy theo `action` của form)
-        event.preventDefault();
+function handleSignUp() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const data = localStorage.getItem('users');
+    const listUsers = JSON.parse(data);
+    if (check_users(username, password, listUsers)) {
+        alert('Đăng nhập thành công!');
+        window.location.href ="index.html"
+    } else {
+        alert('Tài khoản hoặc mật khẩu chưa chính xác!')
+    }
+}
 
-        // Lấy giá trị của các input
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
 
-        // Lấy thông tin đăng ký từ Local Storage
-        const registeredUsername = localStorage.getItem("username");
-        const registeredPassword = localStorage.getItem("password");
-
-        // Kiểm tra username và password có khớp với thông tin đăng ký hay không
-        if (username !== registeredUsername || password !== registeredPassword) {
-            alert("Thông tin đăng nhập không chính xác");
-            return;
+function check_users(username, password, list_of_users) {
+    for (const user of list_of_users) {
+        if (user.username === username && user.password === password) {
+            return true;
         }
-
-        // Thông báo đăng nhập thành công và lưu thông tin đăng nhập vào Local Storage
-        localStorage.setItem("isLogin", true);
-        alert("Đăng nhập thành công");
-    });
-});
+    }
+    return false;
+}

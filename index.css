@@ -98,13 +98,24 @@
 
 p {
     text-align: center;
-    color: red;
+    color: black;
 }
 
-.chat_zalo {
-    position: fixed;
-    bottom: 145px;
-    right: 5px;
-    z-index: 998;
-    transition: all .2s ease-in-out;
+.space {
+    margin-left: 10px;
+}
+
+.account_list {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.py-3rem {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.box-shadown {
+    box-shadow: #5e4638 0 0 9px 4px;
 }
